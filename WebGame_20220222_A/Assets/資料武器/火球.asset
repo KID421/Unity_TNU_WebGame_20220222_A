@@ -18,8 +18,10 @@ MonoBehaviour:
   countMax: 6
   interval: 4
   v2SpawnPoint:
-  - {x: -0.5, y: 0.5, z: 8.403068e+20}
-  - {x: 0, y: 0.2, z: 0.0000000419588}
-  - {x: 0, y: 0, z: -2.5251253e-29}
+  - {x: -0.5, y: 0.5, z: 0}
+  - {x: 0, y: 0.2, z: 0}
+  - {x: 0, y: 0, z: 0}
   - {x: 0, y: -0.5, z: 0}
-  - {x: 0.5, y: 0.5, z: Infinity}
+  - {x: 0.5, y: 0.5, z: 0}
+  goWeapon: {fileID: 0}
+  v3Direction: {x: 0, y: 0, z: 0}

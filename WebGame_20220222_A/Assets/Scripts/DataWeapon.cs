@@ -10,6 +10,8 @@ namespace KID
     /// 4. 數量上限
     /// 5. 生成位置
     /// 6. 攻擊間隔
+    /// 7. 武器物件
+    /// 8. 飛行方向
     /// </summary>
     [CreateAssetMenu(menuName = "KID/Data Weapon", fileName = "Data Weapon")]
     public class DataWeapon : ScriptableObject
@@ -30,5 +32,7 @@ namespace KID
         public Vector3[] v2SpawnPoint;
         [Header("武器物件")]
         public GameObject goWeapon;
+        [Header("飛行方向")]
+        public Vector3 v3Direction;
     }
 }

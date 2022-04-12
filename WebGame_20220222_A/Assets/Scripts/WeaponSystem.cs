@@ -41,6 +41,13 @@ namespace KID
             }
         }
 
+        private void Start()
+        {
+            // 2D 物理.忽略圖層碰撞（圖層 1，圖層 2）
+            Physics2D.IgnoreLayerCollision(3, 6);       // 玩家 與 武器 不碰撞
+            Physics2D.IgnoreLayerCollision(6, 6);       // 武器 與 武器 不碰撞
+        }
+
         private void Update()
         {
             SpawnWeapon();
@@ -52,13 +59,21 @@ namespace KID
         /// </summary>
         private void SpawnWeapon()
         {
-            print("經過時間：" + timer);
+            // print("經過時間：" + timer);
 
             // 如果 計時器 大於等於 間隔時間
             if (timer >= dataWeapon.interval)
             {
-                // 生成(物件)
-                Instantiate(dataWeapon.goWeapon);
+                // 隨機值 = 隨機.範圍（最小值，最大值）※ 整數不包含最大值
+                int random = Random.Range(0, dataWeapon.v2SpawnPoint.Length);
+                // 座標
+                Vector3 pos = transform.position + dataWeapon.v2SpawnPoint[random];
+                // Quaternion 四位元 - 紀錄角度資訊
+                // Quaternion.identity 零角度（0，0，0）
+                // 暫存武器 = 生成(物件)
+                GameObject temp = Instantiate(dataWeapon.goWeapon, pos, Quaternion.identity);
+                // 暫存武器.取得元件<剛體>().添加推力（方向 * 速度）
+                temp.GetComponent<Rigidbody2D>().AddForce(dataWeapon.v3Direction * dataWeapon.speedFly);
                 // 計時器 歸零
                 timer = 0;
             }
