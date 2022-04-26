@@ -12,6 +12,8 @@ namespace KID
     {
         [SerializeField, Header("武器資料")]
         private DataWeapon dataWeapon;
+        [SerializeField, Header("武器刪除時間"), Range(0, 5)]
+        private float weaponDestoryTime = 3.5f;
 
         /// <summary>
         /// 計時器
@@ -46,6 +48,7 @@ namespace KID
             // 2D 物理.忽略圖層碰撞（圖層 1，圖層 2）
             Physics2D.IgnoreLayerCollision(3, 6);       // 玩家 與 武器 不碰撞
             Physics2D.IgnoreLayerCollision(6, 6);       // 武器 與 武器 不碰撞
+            Physics2D.IgnoreLayerCollision(6, 7);       // 武器 與 空氣牆 不碰撞
         }
 
         private void Update()
@@ -76,6 +79,8 @@ namespace KID
                 temp.GetComponent<Rigidbody2D>().AddForce(dataWeapon.v3Direction * dataWeapon.speedFly);
                 // 計時器 歸零
                 timer = 0;
+                // 刪除物件(遊戲物件，延遲時間)
+                Destroy(temp, weaponDestoryTime);
             }
             // 否則
             else
