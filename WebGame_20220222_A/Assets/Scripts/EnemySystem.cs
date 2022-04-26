@@ -43,6 +43,11 @@ namespace KID
             Vector3 posPlayer = traPlayer.position;
 
             transform.position = Vector3.Lerp(posEnemy, posPlayer, 0.5f * data.speed * Time.deltaTime);
+
+            // y 根據敵人與玩家 X 座標調整
+            // 敵人 X 大於 玩家，Y 180 否則 0
+            float y = transform.position.x > traPlayer.position.x ? 180 : 0;
+            transform.eulerAngles = new Vector3(0, y, 0);
         }
     }
 }
