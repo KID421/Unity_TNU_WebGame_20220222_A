@@ -10,6 +10,7 @@ namespace KID
     /// 4. 血量
     /// 5. 掉落經驗值機率
     /// 6. 掉落經驗值大小 - 小中大(藍綠紅)
+    /// 7. 靠近目標後停止距離
     /// </summary>
     [CreateAssetMenu(menuName = "KID/Data Enemy", fileName = "Data Enemy")]
     public class DataEnemy : ScriptableObject
@@ -26,6 +27,8 @@ namespace KID
         public float expDropProbability = 1;
         [Header("掉落經驗值類型")]
         public TypeExp typeExp;
+        [Header("靠近目標後停止距離"), Range(0, 30)]
+        public float stopDistance = 3;
     }
 
     /// <summary>
