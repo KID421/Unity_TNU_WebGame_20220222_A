@@ -14,6 +14,8 @@ namespace KID
         private DataEnemy data;
         [SerializeField, Header("畫布傷害數值")]
         private GameObject goCanvasHurt;
+        [SerializeField, Header("經驗值道具")]
+        private GameObject goExp;
 
         private string parameterDead = "觸發死亡";
         private Animator ani;
@@ -46,6 +48,22 @@ namespace KID
             enemySystem.enabled = false;
             GetComponent<Collider2D>().enabled = false;
             Destroy(gameObject, 1.5f);
+
+            DropExp();
+        }
+
+        /// <summary>
+        /// 掉落經驗值道具
+        /// </summary>
+        private void DropExp()
+        {
+            float random = Random.value;
+
+            if (random <= data.expDropProbability)
+            {
+                GameObject tempExp = Instantiate(goExp, transform.position, Quaternion.identity);
+                tempExp.AddComponent<Exp>().typeExp = data.typeExp;
+            }
         }
     }
 }

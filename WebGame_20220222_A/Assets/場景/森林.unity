@@ -449,8 +449,8 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
+  m_Mass: 100
+  m_LinearDrag: 3
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
@@ -28412,6 +28412,54 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1872487082
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1872487083}
+  - component: {fileID: 1872487084}
+  m_Layer: 0
+  m_Name: "\u7B49\u7D1A\u7BA1\u7406\u5668"
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1872487083
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1872487082}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 19
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1872487084
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1872487082}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07615efc4eb54da48b2086b286ff3e94, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  imgExp: {fileID: 1657448842}
+  textLv: {fileID: 1079115761}
+  exp: 0
+  expNeed: 64000000c80000002c01000090010000f401000058020000bc0200002003000084030000e80300004c040000b00400001405000078050000dc05000040060000a4060000080700006c070000d00700003408000098080000fc08000060090000c4090000280a00008c0a0000f00a0000540b0000b80b00001c0c0000800c0000e40c0000480d0000ac0d0000100e0000740e0000d80e00003c0f0000a00f00000410000068100000cc1000003011000094110000f81100005c120000c01200002413000088130000ec13000050140000b4140000181500007c150000e015000044160000a81600000c17000070170000d4170000381800009c1800000019000064190000c81900002c1a0000901a0000f41a0000581b0000bc1b0000201c0000841c0000e81c00004c1d0000b01d0000141e0000781e0000dc1e0000401f0000a41f0000082000006c200000d02000003421000098210000fc21000060220000c4220000282300008c230000f023000054240000b82400001c25000080250000e425000048260000ac260000
+  dataWeapon: {fileID: 11400000, guid: 75b7c232aa26ce048b87ef09fb89f4ac, type: 2}
 --- !u!1 &1894835895
 GameObject:
   m_ObjectHideFlags: 0
